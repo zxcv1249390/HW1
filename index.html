@@ -52,7 +52,7 @@
     </style>
 </head>
 <body>
-<img src="maxwell無旋轉去背.gif" alt="MAXWELL_CAT_去背" id="NoSpinMaxwell">
+<img src="imgs/maxwell無旋轉去背.gif" alt="MAXWELL_CAT_去背" id="NoSpinMaxwell">
 <div class="text">
     <p id="loadingText"><b>Please wait a moment and try again.</b></p>
     <p id="click">Press the mouse to keep the cat spinning</p>
@@ -62,16 +62,16 @@
     //取得圖片元素
     let maxwell = document.getElementById("NoSpinMaxwell");
 
-    const audio = new Audio('maxwell.mp3');
+    const audio = new Audio('imgs/maxwell.mp3');
     audio.loop = true; // 啟用循環播放
     function startSpin() {
-        maxwell.src = "maxwell旋轉去背.gif";
+        maxwell.src = "imgs/maxwell旋轉去背.gif";
         maxwell.id = "SpinMaxwell";
         audio.play();
     }
 
     function stopSpin() {
-        maxwell.src = "maxwell無旋轉去背.gif";
+        maxwell.src = "imgs/maxwell無旋轉去背.gif";
         maxwell.id = "NoSpinMaxwell";
         audio.pause();
     }
