@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2025/3/4 HW</title>
+    <style>
+        /*整個背景*/
+        body {
+            background-color: #fff4e6;
+        }
+
+        /*文字*/
+        .text {
+            font-family: Verdana, Geneva, Tahoma, sans-serif; /*字體*/
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translateX(-50%);/*水平至中*/
+            font-size: 20px;
+            text-align: center; /* 讓文字置中 */
+            user-select: none;
+            width: 80%; /* 讓文字區塊變寬 */
+        }
+
+        #click{
+            color: #7c7c7c;
+            font-size: 12px;
+        }
+        /*沒選轉貓貓圖*/
+        #NoSpinMaxwell {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);/*水平垂直至中*/
+            width: min(30vw, 30vh); /*會根據視窗大小縮放*/
+            max-width: 190px;
+            height: auto;
+            user-select: none;
+        }
+
+        /*有旋轉貓貓*/
+        #SpinMaxwell {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(30vw, 30vh); /*會根據視窗大小縮放*/
+            max-width: 230px;
+            height: auto;
+            user-select: none;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="maxwell無旋轉去背.gif" alt="MAXWELL_CAT_去背" id="NoSpinMaxwell">
+    <div class="text">
+        <p id="loadingText"><b>Please wait a moment and try again.</b></p>
+        <p id="click">Press the mouse to keep the cat spinning</p>
+    </div>
+
+    <script>
+        //取得圖片元素
+        let maxwell = document.getElementById("NoSpinMaxwell");
+
+        const audio = new Audio('maxwell.mp3');
+        audio.loop = true; // 啟用循環播放
+        function startSpin() {
+            maxwell.src = "maxwell旋轉去背.gif";
+            maxwell.id = "SpinMaxwell";
+            audio.play();
+        }
+
+        function stopSpin() {
+            maxwell.src = "maxwell無旋轉去背.gif";
+            maxwell.id = "NoSpinMaxwell";
+            audio.pause();
+        }
+        // 滑鼠按下和味按下
+        document.addEventListener("mousedown", startSpin);
+        document.addEventListener("mouseup", stopSpin);
+    </script>
+</body>
+</html>
